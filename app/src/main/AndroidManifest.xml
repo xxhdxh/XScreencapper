@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.kk.screencapture"
+    android:versionName="1.0.0"
+    android:versionCode="1">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.RECEIVE_USER_PRESENT" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/LiveStyle">
+        <activity
+            android:name="com.kk.screencapture.MainActivity"
+            android:enabled="true"
+            android:exported="true"
+            android:launchMode="singleInstance">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!--前台截图服务-->
+        <service
+            android:name="com.kk.screencapture.ForegroundScreencapService"
+            android:enabled="true"
+            android:exported="true"/>
+    </application>
+</manifest>
